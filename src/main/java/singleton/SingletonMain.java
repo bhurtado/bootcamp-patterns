@@ -1,14 +1,18 @@
 package singleton;
 
+import java.sql.SQLException;
+
 public class SingletonMain {
 
-    public static void main(String[]arg){
-        MongoDBClient mongoDBClient = MongoDBClient.getClient();
+    public static void main(String[]arg) throws SQLException {
+        /*MongoDBClient mongoDBClient = MongoDBClient.getClient();
         System.out.println(mongoDBClient.getData());
         MongoDBClient mongoDBClient2 = MongoDBClient.getClient();
         System.out.println(mongoDBClient2.getData());
         MongoDBClient mongoDBClient3 = MongoDBClient.getClient();
-        System.out.println(mongoDBClient3.getData());
+        System.out.println(mongoDBClient3.getData());*/
+        SqlDBClient databaseConnection = SqlDBClient.getInstance();
+        databaseConnection.getConnection();
 
 
     }
