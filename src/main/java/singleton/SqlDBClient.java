@@ -8,16 +8,15 @@ public class SqlDBClient {
 
     public static SqlDBClient instance;
     public static Connection connection;
-    public String url = "jdbc:jtds:sqlserver://BETTY//SQLEXPRESS:1433;encrypt=true;integratedSecurity=true;";
-    public String username="betty";
-    public String password="123456";
+    public String url = "jdbc:jtds:sqlserver://BETTY/SQLEXPRESS;databaseName=master;encrypt=true;integratedSecurity=true;";
 
 
     private SqlDBClient() throws SQLException {
         try {
-            // Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            connection = DriverManager.getConnection(url,username,password);
+            connection = DriverManager.getConnection(url);
+            System.out.println("Database Connection Successfully");
         } catch (ClassNotFoundException ex) {
             System.out.println("Database Connection Creation Failed : " + ex.getMessage());
         }
