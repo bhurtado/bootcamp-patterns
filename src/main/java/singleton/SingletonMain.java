@@ -11,8 +11,8 @@ public class SingletonMain {
         System.out.println(mongoDBClient2.getData());
         MongoDBClient mongoDBClient3 = MongoDBClient.getClient();
         System.out.println(mongoDBClient3.getData());*/
-        SqlDBClient databaseConnection = SqlDBClient.getInstance();
-        databaseConnection.getConnection();
+        SqlDBClient sql = SqlDBClient.getInstance();
+        System.out.println(sql.url);
 
 
     }
